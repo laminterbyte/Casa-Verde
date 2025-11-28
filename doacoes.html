@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="imagens/favicon.png" />
+    <title>Doações e Apoio | Instituto Casa Verde</title>
+    <link rel="stylesheet" href="css/doacoes.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="main-nav">
+      <div class="nav-container">
+        <a href="index.html" class="logo-link">
+          <img
+            src="imagens/logo.png"
+            alt="Logotipo Instituto Casa Verde"
+            class="logo-img"
+          />
+          <span class="logo-text">INSTITUTO CASA VERDE</span>
+        </a>
+        <button class="hamburger" aria-label="Abrir menu">&#9776;</button>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item">INÍCIO</a>
+          <a href="sobre.html" class="nav-item">SOBRE NÓS</a>
+          <a href="atividades.html" class="nav-item">ATIVIDADES</a>
+          <a href="cursos.html" class="nav-item">CURSOS</a>
+          <a href="doacoes.html" class="nav-item special-link active"
+            >DOAÇÕES</a
+          >
+          <a href="contato.html" class="nav-item">CONTATO</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <header id="hero-page">
+        <h1 id="hero-title">Carregando...</h1>
+        <p id="hero-phrase">Carregando...</p>
+      </header>
+
+      <section class="donation-section">
+        <div class="cards-grid" id="donation-cards-container"></div>
+      </section>
+
+      <!-- Seção: Nossos Parceiros -->
+      <section class="partners-section">
+        <h1 class="partners-title">Nossos Parceiros</h1>
+
+        <div class="carousel-container">
+          <!-- Setas dentro do container para evitar overflow -->
+          <button
+            class="carousel-arrow carousel-prev"
+            aria-label="Parceiro anterior"
+          >
+            &#8249;
+          </button>
+          <div class="carousel-wrapper">
+            <div class="carousel-track" id="carousel-track">
+              <!-- Parceiros serão carregados aqui -->
+            </div>
+          </div>
+          <button
+            class="carousel-arrow carousel-next"
+            aria-label="Próximo parceiro"
+          >
+            &#8250;
+          </button>
+        </div>
+
+        <p class="partners-cta">
+          Se sua empresa deseja ser parceira, entre em contato pelo email:
+          <a href="mailto:casaverdeinstituto@gmail.com"
+            >casaverdeinstituto@gmail.com</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <div class="modal-overlay" id="modal-pontual">
+      <div class="modal-content">
+        <span class="close-button" data-modal="modal-pontual">&times;</span>
+        <h2>Doação Pontual</h2>
+        <p id="pontual-text-pix">Carregando...</p>
+        <img id="qr-code-img" src="" alt="QR Code PIX" />
+        <p id="pontual-text-recibo">Carregando...</p>
+        <button class="card-button" data-modal="modal-pontual">Fechar</button>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-mensal">
+      <div class="modal-content">
+        <span class="close-button" data-modal="modal-mensal">&times;</span>
+        <h2>Torne-se um Associado</h2>
+        <p id="mensal-text">Carregando...</p>
+        <a id="btn-assinar" href="#" target="_blank" class="card-button"
+          >Doar R$ 30</a
+        >
+        <a
+          id="btn-assinar"
+          href="https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=e95d7462ebb64798a263bd87ff4c8e02"
+          target="_blank"
+          class="card-button"
+          >Doar R$ 60</a
+        >
+        <a
+          id="btn-assinar"
+          href="https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=3cf4737d94714d6191bee3e4e6d6d121"
+          target="_blank"
+          class="card-button"
+          >Doação Livre</a
+        >
+        <button class="card-button" data-modal="modal-mensal">Fechar</button>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-voluntario">
+      <div class="modal-content">
+        <span class="close-button" data-modal="modal-voluntario">&times;</span>
+        <h2>Torne-se um Voluntário</h2>
+        <p id="voluntario-text">Carregando...</p>
+        <a id="btn-voluntario" href="#" target="_blank" class="card-button">
+          Fechar
+        </a>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col logo-text">
+          <h4>INSTITUTO CASA VERDE</h4>
+          <p id="footer-text-icv">Carregando...</p>
+        </div>
+
+        <div class="footer-col links">
+          <h3>LINKS RÁPIDOS</h3>
+          <ul>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="atividades.html">Atividades</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="doacoes.html">Doações</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact">
+          <h3>CONTATO</h3>
+          <p id="footer-endereco">Endereço: Carregando...</p>
+          <p id="footer-email">E-mail: Carregando...</p>
+          <p id="footer-telefone">Telefone: Carregando...</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p id="footer-copyright">
+          Copyright ©2025 Instituto Casa Verde. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const API_URL = "/api/content";
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Lógica do Menu Hamburguer
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+          });
+        }
+
+        // Inicia o carregamento do conteúdo dinâmico
+        fetchContentAndRenderDonations();
+
+        // Configura os listeners dos botões de Fechar Modal
+        setupModalListeners();
+      });
+
+      async function fetchContentAndRenderDonations() {
+        try {
+          const response = await fetch(API_URL);
+          if (!response.ok) {
+            throw new Error(`Erro ao buscar dados: ${response.status}`);
+          }
+          const data = await response.json();
+          const doacoes = data.doacoes;
+          const footerData = data.footer;
+
+          if (!doacoes || !footerData) {
+            console.error(
+              "Dados 'doacoes' ou 'footer' não encontrados na API."
+            );
+            return;
+          }
+
+          // --- Renderização do HEADER/HERO ---
+          document.getElementById("hero-title").textContent =
+            doacoes.tituloHero;
+          document.getElementById("hero-phrase").textContent =
+            doacoes.fraseHero;
+          document.getElementById(
+            "hero-page"
+          ).style.backgroundImage = `url(${doacoes.imagemHero})`;
+
+          // --- Renderização do FOOTER ---
+          renderFooter(footerData);
+
+          // --- Renderização dos Cards ---
+          renderDonationCards(doacoes.cards || []);
+
+          // --- Preenchimento dos Modais ---
+          fillModals(doacoes.modais);
+        } catch (error) {
+          console.error(
+            "Erro ao processar o conteúdo da página Doações:",
+            error
+          );
+        }
+      }
+
+      function renderDonationCards(cards) {
+        const container = document.getElementById("donation-cards-container");
+        container.innerHTML = "";
+
+        cards.forEach((card) => {
+          const cardElement = document.createElement("div");
+          cardElement.classList.add("donation-card");
+
+          cardElement.innerHTML = `
+                    <img src="${card.imagem}" alt="Imagem para ${
+            card.titulo
+          }" class="card-image">
+                    <div class="card-content">
+                        <h3>${card.titulo}</h3>
+                        <p>${card.descricao}</p>
+                        <button class="card-button open-modal" data-modal-target="${
+                          card.modalId
+                        }">
+                            ${
+                              card.titulo.includes("Voluntariado")
+                                ? "Quero Ajudar"
+                                : "Doar Agora"
+                            }
+                        </button>
+                    </div>
+                `;
+          container.appendChild(cardElement);
+        });
+
+        // Adiciona listeners para abrir o modal após renderização
+        document.querySelectorAll(".open-modal").forEach((button) => {
+          button.addEventListener("click", (e) => {
+            const modalId = e.target.getAttribute("data-modal-target");
+            document.getElementById(modalId).style.display = "block";
+          });
+        });
+      }
+
+      function fillModals(modais) {
+        // Modal 1: Doação Pontual (PIX)
+        const pontual = modais.pontual;
+        const pixText = pontual.textoPix.replace(
+          "PIX (CNPJ):",
+          `PIX (CNPJ): **${pontual.chavePix}**`
+        );
+        document.getElementById("pontual-text-pix").innerHTML = pixText;
+        document.getElementById("qr-code-img").src = pontual.imagemQrCode;
+        document.getElementById("pontual-text-recibo").textContent =
+          pontual.textoRecibo;
+
+        // Modal 2: Membro Mensal
+        const mensal = modais.mensal;
+        document.getElementById("mensal-text").textContent =
+          mensal.textoIntroducao;
+        document.getElementById("btn-assinar").href = mensal.linkAssinatura;
+
+        // Modal 3: Voluntariado
+        const voluntario = modais.voluntario;
+        document.getElementById("voluntario-text").textContent =
+          voluntario.textoIntroducao;
+
+        // O botão 'Fechar' do Modal Voluntariado será o link de contato
+        const voluntarioBtn = document.getElementById("btn-voluntario");
+        voluntarioBtn.textContent = "Quero ser Voluntário!";
+        voluntarioBtn.href = voluntario.linkCadastro;
+        voluntarioBtn.setAttribute("target", "_blank");
+      }
+
+      // Função para fechar o modal
+      function setupModalListeners() {
+        const modals = document.querySelectorAll(".modal-overlay");
+
+        modals.forEach((modal) => {
+          // Fechar ao clicar no 'X' ou no botão 'Fechar' dentro do modal
+          modal
+            .querySelectorAll(
+              '.close-button, .card-button:not([data-is-link="true"])'
+            )
+            .forEach((btn) => {
+              btn.addEventListener("click", () => {
+                // Se for o botão 'Quero ser Voluntário', o modal não fecha, pois abre o link.
+                if (
+                  btn.hasAttribute("data-is-link") &&
+                  btn.getAttribute("data-is-link") === "true"
+                ) {
+                  return;
+                }
+                modal.style.display = "none";
+              });
+            });
+
+          // Fechar ao clicar fora do modal
+          modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+              modal.style.display = "none";
+            }
+          });
+        });
+      }
+
+      // Dados dos parceiros — substitua com seus próprios
+      const parceiros = [
+        {
+          imagem: "imagens/parceiros/inst-qualifica.jpg",
+          titulo: "Instituto Qualifica",
+          descricao:
+            "Parceiro nas atividades esportivas com doações de chuteiras. @institutoqualificaoficial - perfil do instagram.",
+        },
+        {
+          imagem: "imagens/parceiros/je-pinturas.jpg",
+          titulo: "JE Pinturas",
+          descricao:
+            "Grande parceiro na pretação de serviços de reformas e pinturas do ICV. WhatsApp: 11 95806-2935.",
+        },
+        {
+          imagem: "imagens/parceiros/lam-comunicacao-visual.jpg",
+          titulo: "LAM Comunicação Visual",
+          descricao:
+            "Nobre parceiro especializado em tudo para comunicação visual, que cuida da identidade visual do Instituto Casa Verde.",
+        },
+        {
+          imagem: "imagens/parceiros/vip-internet.jpg",
+          titulo: "VIP Internet",
+          descricao: "Parceiro que insveste em tecnologia, fornecendo sinal de internet para o ICV. Acelerando nossos projetos e comunicações.",
+        },
+        {
+          imagem: "imagens/parceiros/bruna-angel.jpg",
+          titulo: "Bruna Angel",
+          descricao: "Investindo em Artes e Design para os materiais didáticos dos alunos, uniformes e identificação funcional do quadro de participantes do ICV.",
+        },
+        {
+          imagem: "imagens/parceiros/adgvidas.jpg",
+          titulo: "AD Gerando Vidas",
+          descricao: "Essa Igreja e grande parceira doou materiais para proporcionar geração de recursos que serão convertidos para os projetos do ICV.",
+        },
+        {
+        imagem: "imagens/parceiros/midiativa.jpg",
+          titulo: "Midi@tiva Ideias Interativas",
+          descricao: "Colaborador e parceiro presente no desenvolvimento dos sistemas de gestão administrativa e criação/manutenção do site ICV.",
+        },
+      ];
+
+      // Renderiza os parceiros
+      function renderPartners() {
+        const track = document.getElementById("carousel-track");
+        if (!track) return;
+        track.innerHTML = "";
+        parceiros.forEach((parceiro) => {
+          const slide = document.createElement("div");
+          slide.classList.add("partner-slide");
+          slide.innerHTML = `
+      <img src="${parceiro.imagem}" alt="${parceiro.titulo}" />
+      <h3>${parceiro.titulo}</h3>
+      <p>${parceiro.descricao}</p>
+    `;
+          track.appendChild(slide);
+        });
+      }
+
+      // Navegação do carrossel
+      function setupCarousel() {
+        const prevBtn = document.querySelector(".carousel-prev");
+        const nextBtn = document.querySelector(".carousel-next");
+        const track = document.getElementById("carousel-track");
+
+        if (!prevBtn || !nextBtn || !track) {
+          console.error("Elementos do carrossel não encontrados.");
+          return;
+        }
+
+        let currentIndex = 0;
+        const slideCount = parceiros.length;
+        const visibleSlides = Math.floor(track.offsetWidth / (260 + 20)); // largura do slide + gap
+
+        function updateCarousel() {
+          const offset = -currentIndex * (260 + 20);
+          track.style.transform = `translateX(${offset}px)`;
+        }
+
+        prevBtn.addEventListener("click", () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+          }
+        });
+
+        nextBtn.addEventListener("click", () => {
+          if (currentIndex < slideCount - visibleSlides) {
+            currentIndex++;
+            updateCarousel();
+          }
+        });
+
+        // Recalcular ao redimensionar a janela
+        window.addEventListener("resize", () => {
+          const newVisibleSlides = Math.floor(track.offsetWidth / (260 + 20));
+          if (newVisibleSlides !== visibleSlides) {
+            // Reajustar índice se necessário
+            if (currentIndex > slideCount - newVisibleSlides) {
+              currentIndex = Math.max(0, slideCount - newVisibleSlides);
+              updateCarousel();
+            }
+          }
+        });
+      }
+
+      // Inicializa parceiros e carrossel
+      document.addEventListener("DOMContentLoaded", () => {
+        renderPartners();
+
+        // Garante que o DOM esteja completamente carregado antes de iniciar o carrossel
+        setTimeout(() => {
+          if (window.innerWidth > 900) {
+            setupCarousel();
+          }
+        }, 500);
+      });
+
+      // Função de Renderização do FOOTER (Reutilizada)
+      function renderFooter(footerData) {
+        document.getElementById("footer-text-icv").textContent =
+          footerData.textoIc_Text;
+        document.getElementById(
+          "footer-endereco"
+        ).textContent = `Endereço: ${footerData.endereco}`;
+        document.getElementById(
+          "footer-email"
+        ).textContent = `E-mail: ${footerData.email}`;
+        document.getElementById(
+          "footer-telefone"
+        ).textContent = `Telefone: ${footerData.telefone}`;
+        document.getElementById(
+          "footer-copyright"
+        ).textContent = `Copyright ©${footerData.copyrightAno} Instituto Casa Verde. Todos os direitos reservados.`;
+      }
+    </script>
+  </body>
+</html>

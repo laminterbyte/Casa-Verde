@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="imagens/favicon.png">
+    <title>Cursos | Instituto Casa Verde</title>
+    <link rel="stylesheet" href="css/cursos.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="main-nav">
+      <div class="nav-container">
+        <a href="index.html" class="logo-link">
+          <img
+            src="imagens/logo.png"
+            alt="Logotipo Instituto Casa Verde"
+            class="logo-img"
+          />
+          <span class="logo-text">INSTITUTO CASA VERDE</span>
+        </a>
+        <button class="hamburger" aria-label="Abrir menu">&#9776;</button>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item">INÍCIO</a>
+          <a href="sobre.html" class="nav-item">SOBRE NÓS</a>
+          <a href="atividades.html" class="nav-item">ATIVIDADES</a>
+          <a href="cursos.html" class="nav-item active">CURSOS</a>
+          <a href="doacoes.html" class="nav-item special-link">DOAÇÕES</a>
+          <a href="contato.html" class="nav-item">CONTATO</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <header id="hero-page">
+        <h1 id="hero-title">Carregando...</h1>
+        <p id="hero-phrase">Carregando...</p>
+      </header>
+
+      <section class="courses-section">
+        <h2>Destaques</h2>
+
+        <div class="filter-container" id="filter-container">
+          <button class="filter-button active" data-filter="todos">
+            Mostrar Todas
+          </button>
+        </div>
+
+        <div class="cards-grid" id="cursos-container"></div>
+      </section>
+    </main>
+
+    <div class="modal-overlay" id="course-modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="modal-title"></h2>
+
+        <div class="modal-description-section">
+          <img id="modal-detail-img" src="" alt="Imagem do Curso" />
+          <p id="modal-full-description"></p>
+        </div>
+
+        <div class="modal-depoimento">
+          <h3 id="depoimento-title"></h3>
+          <div class="depoimento-content">
+            <img id="depoimento-img" src="" alt="Foto do Aluno" />
+            <div>
+              <audio
+                id="depoimento-audio-player"
+                controls
+                style="width: 100%; display: none"
+              ></audio>
+              <p id="depoimento-text"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-aprendizado">
+          <h3>O que você vai aprender:</h3>
+          <ul id="aprendizado-list"></ul>
+        </div>
+
+        <a
+          id="modal-whatsapp-link"
+          href="#"
+          target="_blank"
+          class="card-button"
+          style="display: block; text-align: center; margin-top: 30px"
+        >
+          Falar no WhatsApp e Inscrever-se
+        </a>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col logo-text">
+          <h4>INSTITUTO CASA VERDE</h4>
+          <p id="footer-text-icv">Carregando...</p>
+        </div>
+
+        <div class="footer-col links">
+          <h3>LINKS RÁPIDOS</h3>
+          <ul>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="atividades.html">Atividades</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="doacoes.html">Doações</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact">
+          <h3>CONTATO</h3>
+          <p id="footer-endereco">Endereço: Carregando...</p>
+          <p id="footer-email">E-mail: Carregando...</p>
+          <p id="footer-telefone">Telefone: Carregando...</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p id="footer-copyright">
+          Copyright ©2025 Instituto Casa Verde. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const API_URL = '/api/content';
+      let cursosData = []; // Armazena todos os cursos para uso global
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Lógica do Menu Hamburguer
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+          });
+        }
+
+        // Inicia o carregamento do conteúdo dinâmico
+        fetchContentAndRenderCourses();
+
+        // Configura o modal para fechar ao clicar no botão 'x' ou fora
+        const modal = document.getElementById("course-modal");
+        const closeButton = modal.querySelector(".close-button");
+
+        closeButton.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      });
+
+      async function fetchContentAndRenderCourses() {
+        try {
+          const response = await fetch(API_URL);
+          if (!response.ok) {
+            throw new Error(`Erro ao buscar dados: ${response.status}`);
+          }
+          const data = await response.json();
+          const cursos = data.cursos;
+          const footerData = data.footer;
+
+          if (!cursos || !footerData) {
+            console.error("Dados 'cursos' ou 'footer' não encontrados na API.");
+            return;
+          }
+
+          cursosData = cursos.lista || []; // Salva para uso na filtragem e modal
+
+          // --- Renderização do HEADER/HERO ---
+          document.getElementById("hero-title").textContent = cursos.tituloHero;
+          document.getElementById("hero-phrase").textContent = cursos.fraseHero;
+          document.getElementById(
+            "hero-page"
+          ).style.backgroundImage = `url(${cursos.imagemHero})`;
+
+          // --- Renderização do FOOTER ---
+          renderFooter(footerData);
+
+          // --- Renderização dos Cursos e Filtros ---
+          renderCourseCards(cursosData);
+          setupFilters(cursos.categorias || []);
+          setupCardListeners(); // Adiciona listener para abrir o modal
+        } catch (error) {
+          console.error(
+            "Erro ao processar o conteúdo da página Cursos:",
+            error
+          );
+        }
+      }
+
+      // Função de Renderização dos CARDS
+      function renderCourseCards(cursos) {
+        const container = document.getElementById("cursos-container");
+        container.innerHTML = "";
+
+        cursos.forEach((curso) => {
+          const card = document.createElement("div");
+          card.classList.add("course-card");
+          card.setAttribute("data-categoria", curso.categoria);
+          card.setAttribute("data-id", curso.id); // Chave para buscar detalhes
+
+          card.innerHTML = `
+                    <img src="${curso.imagemCard}" alt="Imagem do curso: ${curso.titulo}" class="card-image">
+                    <div class="card-content">
+                        <h3>${curso.titulo}</h3>
+                        <p>${curso.descricaoCurta}</p>
+                        <button class="card-button detail-button" data-id="${curso.id}">Saiba Mais</button>
+                    </div>
+                `;
+          container.appendChild(card);
+        });
+      }
+
+      // Função de Renderização do FOOTER (Reutilizada)
+      function renderFooter(footerData) {
+        document.getElementById("footer-text-icv").textContent =
+          footerData.textoIc_Text;
+        document.getElementById(
+          "footer-endereco"
+        ).textContent = `Endereço: ${footerData.endereco}`;
+        document.getElementById(
+          "footer-email"
+        ).textContent = `E-mail: ${footerData.email}`;
+        document.getElementById(
+          "footer-telefone"
+        ).textContent = `Telefone: ${footerData.telefone}`;
+        document.getElementById(
+          "footer-copyright"
+        ).textContent = `Copyright ©${footerData.copyrightAno} Instituto Casa Verde. Todos os direitos reservados.`;
+      }
+
+      // Lógica dos Filtros (Categorias)
+      function setupFilters(categorias) {
+        const filterContainer = document.getElementById("filter-container");
+
+        // Cria os botões de categoria
+        categorias.forEach((categoria) => {
+          const button = document.createElement("button");
+          button.classList.add("filter-button");
+          button.textContent = categoria;
+          button.setAttribute(
+            "data-filter",
+            categoria.toLowerCase().replace(/\s/g, "")
+          );
+          filterContainer.appendChild(button);
+        });
+
+        filterContainer.addEventListener("click", (e) => {
+          if (e.target.classList.contains("filter-button")) {
+            const selectedFilter = e.target.getAttribute("data-filter");
+
+            // Atualiza o estado dos botões
+            document
+              .querySelectorAll(".filter-button")
+              .forEach((btn) => btn.classList.remove("active"));
+            e.target.classList.add("active");
+
+            filterCourses(selectedFilter);
+          }
+        });
+      }
+
+      function filterCourses(filter) {
+        const cards = document.querySelectorAll(
+          "#cursos-container .course-card"
+        );
+
+        // Limpa o filtro de entrada para comparação
+        const cleanedFilter = filter.toLowerCase().replace(/\s/g, "");
+
+        cards.forEach((card) => {
+          const categoria = card
+            .getAttribute("data-categoria")
+            .toLowerCase()
+            .replace(/\s/g, "");
+
+          // CORREÇÃO: Verifica se o filtro é 'todos' (ou 'mostrar-todas', se tiver usado no HTML)
+          if (
+            cleanedFilter === "todos" ||
+            cleanedFilter === "mostrar-todas" ||
+            categoria === cleanedFilter
+          ) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      // Lógica para abrir o Modal de Detalhes
+      function setupCardListeners() {
+        const container = document.getElementById("cursos-container");
+        container.addEventListener("click", (e) => {
+          const button = e.target.closest(".detail-button");
+          if (button) {
+            const courseId = parseInt(button.getAttribute("data-id"));
+            const curso = cursosData.find((c) => c.id === courseId);
+
+            if (curso) {
+              renderModalDetails(curso);
+            }
+          }
+        });
+      }
+
+      function renderModalDetails(curso) {
+        const modal = document.getElementById("course-modal");
+        const detalhes = curso.detalhes;
+
+        // 1. Título
+        document.getElementById("modal-title").textContent = curso.titulo;
+
+        // 2. Descrição e Imagem
+        document.getElementById("modal-full-description").textContent =
+          detalhes.descricaoCompleta;
+        document.getElementById("modal-detail-img").src =
+          detalhes.imagemDetalhe;
+        document.getElementById(
+          "modal-detail-img"
+        ).alt = `Imagem detalhada do curso: ${curso.titulo}`;
+
+        // 3. Depoimento
+        const audioPlayer = document.getElementById("depoimento-audio-player");
+        const depoimentoContainer = modal.querySelector(".modal-depoimento");
+
+        if (detalhes.depoimento && detalhes.depoimento.audioUrl) {
+          depoimentoContainer.style.display = "block";
+          document.getElementById("depoimento-title").textContent =
+            detalhes.depoimento.titulo;
+          document.getElementById("depoimento-img").src =
+            detalhes.depoimento.imagem;
+          document.getElementById("depoimento-text").textContent =
+            detalhes.depoimento.textoDescritivo;
+          audioPlayer.src = detalhes.depoimento.audioUrl;
+          audioPlayer.style.display = "block";
+        } else {
+          depoimentoContainer.style.display = "none"; // Esconde a seção se não houver dados
+          audioPlayer.style.display = "none";
+        }
+
+        // 4. Aprendizado
+        const aprendizadoList = document.getElementById("aprendizado-list");
+        aprendizadoList.innerHTML = "";
+
+        detalhes.aprendizado.forEach((topico) => {
+          const li = document.createElement("li");
+          li.textContent = topico;
+          aprendizadoList.appendChild(li);
+        });
+
+        // 5. Link de Contato
+        document.getElementById("modal-whatsapp-link").href = curso.linkContato;
+
+        // Abre o modal
+        modal.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="imagens/favicon.png">
+    <title>Sobre Nós | Instituto Casa Verde</title>
+    <link rel="stylesheet" href="css/sobre.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="main-nav">
+      <div class="nav-container">
+        <a href="index.html" class="logo-link">
+          <img
+            src="imagens/logo.png"
+            alt="Logotipo Instituto Casa Verde"
+            class="logo-img"
+          />
+          <span class="logo-text">INSTITUTO CASA VERDE</span>
+        </a>
+        <button class="hamburger" aria-label="Abrir menu">&#9776;</button>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item">INÍCIO</a>
+          <a href="sobre.html" class="nav-item active">SOBRE NÓS</a>
+          <a href="atividades.html" class="nav-item">ATIVIDADES</a>
+          <a href="cursos.html" class="nav-item">CURSOS</a>
+          <a href="doacoes.html" class="nav-item special-link">DOAÇÕES</a>
+          <a href="contato.html" class="nav-item">CONTATO</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <header id="hero-page">
+        <h1 id="hero-title">Nossa História</h1>
+        <p id="hero-phrase">Carregando...</p>
+      </header>
+
+      <section class="content-section" id="quem-somos-section">
+        <div class="text-content">
+          <h2 id="quem-somos-titulo">Carregando...</h2>
+          <p id="quem-somos-texto">Carregando...</p>
+        </div>
+        <div class="image-content">
+          <img id="quem-somos-img" src="" alt="Imagem Quem Somos" />
+        </div>
+      </section>
+
+      <section class="content-section" id="missao-visao-section">
+        <div class="text-content">
+          <h2 id="missao-visao-titulo">Carregando...</h2>
+          <h3 class="mission-title">Missão:</h3>
+          <p id="missao-text">Carregando...</p>
+          <h3 class="vision-title">Visão:</h3>
+          <p id="visao-text">Carregando...</p>
+        </div>
+        <div class="image-content">
+          <img id="missao-visao-img" src="" alt="Imagem Missão e Visão" />
+        </div>
+      </section>
+
+      <section class="values-section">
+        <h2 id="valores-titulo">Carregando...</h2>
+        <p id="valores-texto">Carregando...</p>
+        <div class="values-grid" id="values-container"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col logo-text">
+          <h4>INSTITUTO CASA VERDE</h4>
+          <p id="footer-text-icv">Carregando...</p>
+        </div>
+
+        <div class="footer-col links">
+          <h3>LINKS RÁPIDOS</h3>
+          <ul>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="atividades.html">Atividades</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="doacoes.html">Doações</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact">
+          <h3>CONTATO</h3>
+          <p id="footer-endereco">Endereço: Carregando...</p>
+          <p id="footer-email">E-mail: Carregando...</p>
+          <p id="footer-telefone">Telefone: Carregando...</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p id="footer-copyright">
+          Copyright ©2025 Instituto Casa Verde. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const API_URL = '/api/content';
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Lógica do Menu Hamburguer
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+          });
+        }
+
+        // Inicia o carregamento do conteúdo dinâmico
+        fetchContentAndRenderSobreNos();
+      });
+
+      async function fetchContentAndRenderSobreNos() {
+        try {
+          const response = await fetch(API_URL);
+          if (!response.ok) {
+            throw new Error(`Erro ao buscar dados: ${response.status}`);
+          }
+          const data = await response.json();
+          const sobreNos = data.sobreNos;
+          const footerData = data.footer;
+
+          if (!sobreNos || !footerData) {
+            console.error(
+              "Dados 'sobreNos' ou 'footer' não encontrados na API."
+            );
+            return;
+          }
+
+          // --- Renderização do HEADER/HERO ---
+          document.getElementById("hero-title").textContent =
+            sobreNos.tituloHero;
+          document.getElementById("hero-phrase").textContent =
+            sobreNos.fraseHero;
+          document.getElementById(
+            "hero-page"
+          ).style.backgroundImage = `url(${sobreNos.imagemHero})`;
+
+          // --- Renderização QUEM SOMOS ---
+          document.getElementById("quem-somos-titulo").textContent =
+            sobreNos.quemSomos.titulo;
+          document.getElementById("quem-somos-texto").textContent =
+            sobreNos.quemSomos.texto;
+          document.getElementById("quem-somos-img").src =
+            sobreNos.quemSomos.imagem;
+
+          // --- Renderização MISSÃO E VISÃO ---
+          document.getElementById("missao-visao-titulo").textContent =
+            sobreNos.missaoVisao.titulo;
+          document.getElementById("missao-text").textContent =
+            sobreNos.missaoVisao.missao;
+          document.getElementById("visao-text").textContent =
+            sobreNos.missaoVisao.visao;
+          document.getElementById("missao-visao-img").src =
+            sobreNos.missaoVisao.imagem;
+
+          // --- Renderização VALORES ---
+          document.getElementById("valores-titulo").textContent =
+            sobreNos.valores.titulo;
+          document.getElementById("valores-texto").textContent =
+            sobreNos.valores.texto;
+
+          const valuesContainer = document.getElementById("values-container");
+          valuesContainer.innerHTML = "";
+
+          sobreNos.valores.lista.forEach((valor) => {
+            const card = document.createElement("div");
+            card.classList.add("value-card");
+            card.innerHTML = `
+                        <h3>${valor.titulo}</h3>
+                        <p>${valor.descricao}</p>
+                    `;
+            valuesContainer.appendChild(card);
+          });
+
+          // --- Renderização FOOTER ---
+          document.getElementById("footer-text-icv").textContent =
+            footerData.textoIc_Text;
+          document.getElementById(
+            "footer-endereco"
+          ).textContent = `Endereço: ${footerData.endereco}`;
+          document.getElementById(
+            "footer-email"
+          ).textContent = `E-mail: ${footerData.email}`;
+          document.getElementById(
+            "footer-telefone"
+          ).textContent = `Telefone: ${footerData.telefone}`;
+          document.getElementById(
+            "footer-copyright"
+          ).textContent = `Copyright ©${footerData.copyrightAno} Instituto Casa Verde. Todos os direitos reservados.`;
+        } catch (error) {
+          console.error(
+            "Erro ao processar o conteúdo da página Sobre Nós:",
+            error
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

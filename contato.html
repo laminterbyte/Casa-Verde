@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="imagens/favicon.png">
+    <title>Contato | Instituto Casa Verde</title>
+    <link rel="stylesheet" href="css/contato.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="imagens/logo.png" alt="Logotipo Instituto Casa Verde" class="logo-img">
+                <span class="logo-text">INSTITUTO CASA VERDE</span>
+            </a>
+            <button class="hamburger" aria-label="Abrir menu">&#9776;</button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-item">INÍCIO</a>
+                <a href="sobre.html" class="nav-item">SOBRE NÓS</a> 
+                <a href="atividades.html" class="nav-item">ATIVIDADES</a>
+                <a href="cursos.html" class="nav-item">CURSOS</a>
+                <a href="doacoes.html" class="nav-item special-link">DOAÇÕES</a>
+                <a href="contato.html" class="nav-item active">CONTATO</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+        <header id="hero-page">
+            <h1 id="hero-title">Carregando...</h1>
+            <p id="hero-phrase">Carregando...</p>
+        </header>
+
+        <section class="contact-section">
+            
+            <div class="contact-col">
+                <h2>Envie Sua Mensagem</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" id="submit-button">Enviar Contato</button>
+                </form>
+
+                <div class="social-media">
+                    <h2>Nossas Redes</h2>
+                    <div id="social-links-container"></div>
+                </div>
+            </div>
+
+            <div class="contact-col">
+                <h2>Nossa Localização</h2>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.859676579808!2d-46.36881202476576!3d-23.473539959648675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce6143c7b20499%3A0x6b772c687e1f137e!2sRua%20Aramina%2C%2083%20-%20Jardim%20Fiorelo%2C%20Itaquaquecetuba%20-%20SP%2C%2008570-420%2C%20Brazil!5e0!3m2!1sen!2sus!4v1699905380530!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="map-info">
+                    <h3>Horário de Atendimento</h3>
+                    <p><strong>Segunda a Sexta-feira:</strong> <span id="horario-uteis">Carregando...</span></p>
+                    <p><strong>Aos Sábados:</strong> <span id="horario-sabados">Carregando...</span></p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col logo-text">
+                <h4>INSTITUTO CASA VERDE</h4>
+                <p id="footer-text-icv">Carregando...</p>
+            </div>
+
+            <div class="footer-col links">
+                <h3>LINKS RÁPIDOS</h3>
+                <ul>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="atividades.html">Atividades</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="doacoes.html">Doações</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact">
+                <h3>CONTATO</h3>
+                <p id="footer-endereco">Endereço: Carregando...</p>
+                <p id="footer-email">E-mail: Carregando...</p>
+                <p id="footer-telefone">Telefone: Carregando...</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="footer-copyright">Copyright ©2025 Instituto Casa Verde. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const API_URL = '/api/content'; 
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica do Menu Hamburguer
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('open');
+                });
+            }
+            
+            // Inicia o carregamento do conteúdo dinâmico
+            fetchContentAndRenderContact();
+
+            // Adiciona listener para simular o envio do formulário
+            document.getElementById('contact-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Mensagem enviada com sucesso! (Funcionalidade simulada)');
+                e.target.reset(); // Limpa o formulário após o envio
+            });
+        });
+
+
+        async function fetchContentAndRenderContact() {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) {
+                    throw new Error(`Erro ao buscar dados: ${response.status}`);
+                }
+                const data = await response.json();
+                const contato = data.contato;
+                const footerData = data.footer;
+                
+                if (!contato || !footerData) {
+                    console.error("Dados 'contato' ou 'footer' não encontrados na API.");
+                    return;
+                }
+                
+                // --- Renderização do HEADER/HERO ---
+                document.getElementById('hero-title').textContent = contato.tituloHero;
+                document.getElementById('hero-phrase').textContent = contato.fraseHero;
+                document.getElementById('hero-page').style.backgroundImage = `url(${contato.imagemHero})`;
+                
+                // --- Renderização do FOOTER ---
+                renderFooter(footerData);
+
+                // --- Renderização do Contato ---
+                renderSocialMedia(contato.redesSociais);
+                renderHorarios(contato.horarioAtendimento);
+
+            } catch (error) {
+                console.error('Erro ao processar o conteúdo da página Contato:', error);
+            }
+        }
+        
+        function renderSocialMedia(redes) {
+            const container = document.getElementById('social-links-container');
+            container.innerHTML = '';
+            
+            const iconMap = {
+                'facebook': 'fab fa-facebook-f',
+                'instagram': 'fab fa-instagram',
+                'linkedin': 'fab fa-linkedin-in',
+                'youtube': 'fab fa-youtube'
+            };
+
+            redes.forEach(rede => {
+                const link = document.createElement('a');
+                link.href = rede.link;
+                link.target = '_blank';
+                link.title = `Nos siga no ${rede.icone}`;
+                
+                const icon = document.createElement('i');
+                icon.className = iconMap[rede.icone] || 'fas fa-external-link-alt';
+                
+                link.appendChild(icon);
+                container.appendChild(link);
+            });
+        }
+        
+        function renderHorarios(horarios) {
+            document.getElementById('horario-uteis').textContent = horarios.diasUteis;
+            document.getElementById('horario-sabados').textContent = horarios.sabados;
+        }
+
+
+        // Função de Renderização do FOOTER (Reutilizada)
+        function renderFooter(footerData) {
+            document.getElementById('footer-text-icv').textContent = footerData.textoIc_Text;
+            document.getElementById('footer-endereco').textContent = `Endereço: ${footerData.endereco}`;
+            document.getElementById('footer-email').textContent = `E-mail: ${footerData.email}`;
+            document.getElementById('footer-telefone').textContent = `Telefone: ${footerData.telefone}`;
+            document.getElementById('footer-copyright').textContent = `Copyright ©${footerData.copyrightAno} Instituto Casa Verde. Todos os direitos reservados.`;
+        }
+    </script>
+</body>
+</html>
