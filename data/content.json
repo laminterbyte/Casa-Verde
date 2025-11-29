@@ -1,0 +1,325 @@
+{
+  "carrossel": [
+    {
+      "id": 1,
+      "image": "imagens/inicio/slide1.jpg",
+      "alt": "Jovem aluno tocando teclado"
+    },
+    {
+      "id": 2,
+      "image": "imagens/inicio/slide2.jpg",
+      "alt": "Crianças treinando futebol"
+    },
+    {
+      "id": 3,
+      "image": "imagens/inicio/slide3.jpg",
+      "alt": "Grupo de pessoas se confraternizando"
+    },
+    {
+      "id": 4,
+      "image": "imagens/inicio/slide4.jpg",
+      "alt": "Mãos digitando no teclado do notebook"
+    },
+    {
+      "id": 5,
+      "image": "imagens/inicio/slide5.jpg",
+      "alt": "Aula de artes com crianças"
+    },
+    {
+      "id": 6,
+      "image": "imagens/inicio/slide6.jpg",
+      "alt": "Cumprimento de mãos e doação"
+    }
+  ],
+
+  "homeTexts": {
+    "title": "Bem-vindo ao Instituto Casa Verde",
+    "subtitle": "Conectando pessoas e transformando vidas através de nossas iniciativas"
+  },
+
+  "sobreNos": {
+    "tituloHero": "Nossa História",
+    "fraseHero": "Conheça a jornada que nos trouxe até aqui e o que nos motiva todos os dias.",
+    "imagemHero": "imagens/sobre_nos/banner.jpg",
+    "quemSomos": {
+      "titulo": "Quem Somos",
+      "texto": "O Instituto Casa Verde (ICV) é uma organização sem fins lucrativos comprometida em transformar a realidade de comunidades por meio da educação, cultura e desenvolvimento social. Desde nossa fundação, trabalhamos para criar um ambiente de aprendizado seguro e inspirador, onde crianças e adolescentes em periferia possam desenvolver suas habilidades, descobrir seus talentos e construir um futuro mais promissor.\n\nNossa atuação vai além da sala de aula. Promovemos atividades e eventos culturais que incentivam a participação da comunidade e o engajamento cívico. Acreditamos que o conhecimento é a chave para o empoderamento, e por isso investimos em projetos que fomentam a autonomia e a consciência social.",
+      "imagem": "imagens/sobre_nos/quem_somos.jpg"
+    },
+
+    "missaoVisao": {
+      "titulo": "Nossa Missão e Visão",
+      "missao": "Contribuir para o desenvolvimento integral de crianças e adolescentes, fortalecendo suas competências socioemocionais e preparando-os para construir um futuro consciente, justo e cheio de oportunidades.",
+      "visao": "Ser uma referência de transformação social, onde cada criança e adolescente encontre um ambiente acolhedor, que valoriza o seu potencial, promova seu crescimento integral e contribua para a superação de ciclos de exclusão social",
+      "imagem": "imagens/sobre_nos/missao_visao.jpg"
+    },
+
+    "valores": {
+      "titulo": "Nossos Valores",
+      "texto": "O trabalho do Instituto Casa Verde é pautado por valores que guiam cada uma de nossas ações:",
+      "lista": [
+        {
+          "titulo": "Respeito aos direitos",
+          "descricao": "Garantir o cumprimento dos direitos de cada criança e adolescente."
+        },
+        {
+          "titulo": "Inclusão e Igualdade",
+          "descricao": "Promover acesso a oportunidades para todos, sem discriminação."
+        },
+        {
+          "titulo": "Autonomia e protagonismo",
+          "descricao": "Incentivar crianças e adolescentes a descobrirem seu potencial e fazerem escolhas conscientes."
+        },
+        {
+          "titulo": "Desenvolvimento integral",
+          "descricao": "Promover crescimento intelectual, emocional, social e cultural."
+        },
+        {
+          "titulo": "Transformação social",
+          "descricao": "Romper ciclos de exclusão e contribuir para uma sociedade mais justa e com oportunidades."
+        },
+        {
+          "titulo": "Compromisso com a comunidade",
+          "descricao": "Trabalhar em parceria com famílias, escolas e instituições para fortalecer vínculos e ampliar impactos."
+        }
+      ]
+    }
+  },
+
+  "footer": {
+    "textoIc_Text": "Comprometidos com a transformação social através da educação, cultura e desenvolvimento. Junte-se a nós nesta missão!",
+    "endereco": "Rua Aramina, 83 - Jd. Fiorelo, Itaquaquecetuba/SP - Cep: 08570-420",
+    "email": "casaverdeinstituto@gmail.com",
+    "telefone": "(11) 91822-5870",
+    "copyrightAno": "2025"
+  },
+
+  "atividades": {
+    "tituloHero": "Atividades e Eventos",
+    "fraseHero": "Conecte-se com a comunidade, aprenda e contribua para um futuro melhor. Junte-se a nós.",
+    "imagemHero": "imagens/atividades/banner.jpg",
+
+    "proximos": [
+      {
+        "id": 1,
+        "imagem": "imagens/atividades/financas.jpg",
+        "titulo": "Workshop de Finanças Pessoais",
+        "data": "15 de Novembro, 2025",
+        "tema": "Finanças",
+        "horario": "19:00 - 21:00",
+        "local": "Auditório Principal ICV",
+        "descricao": "Aprenda a planejar seu orçamento e investir para o futuro em nosso workshop gratuito.",
+        "linkContato": "https://api.whatsapp.com/send?phone=5511918225870&text=Quero%20me%20inscrever%20no%20Workshop%20de%20Finanças"
+      },
+      {
+        "id": 2,
+        "imagem": "imagens/atividades/arrecadacao.jpg",
+        "titulo": "Arrecadação de Agasalhos e Alimentos",
+        "data": "25 de Outubro, 2025",
+        "tema": "Social",
+        "horario": "10:00 - 18:00",
+        "local": "Pontos de coleta do ICV",
+        "descricao": "Ajude a aquecer e alimentar famílias em situação de vulnerabilidade. Doe roupas, cobertores e alimentos não perecíveis.",
+        "linkContato": "https://api.whatsapp.com/send?phone=5511918225870&text=Quero%20mais%20informações%20sobre%20os%20pontos%20de%20coletas."
+      },
+      {
+        "id": 3,
+        "imagem": "imagens/atividades/futebol.jpg",
+        "titulo": "Torneio de Futebol Comunitário",
+        "data": "01 de Novembro, 2025",
+        "tema": "Esportes",
+        "horario": "09:00 - 12:00",
+        "local": "Campo do ICV",
+        "descricao": "Incentivando o esporte e a integração com um torneio amistoso para crianças de 6 a 12 anos.",
+        "linkContato": "https://api.whatsapp.com/send?phone=5511918225870&text=Informações%20sobre%20o%20Torneio%20de%20Futebol"
+      }
+    ],
+    "realizados": [
+      {
+        "id": 101,
+        "imagem": "imagens/atividades/artesanato.jpg",
+        "titulo": "Oficina de Artesanato Solidário",
+        "data": "Junho, 2025",
+        "descricao": "Produção de peças artesanais para arrecadação de fundos e desenvolvimento de novas habilidades."
+      },
+      {
+        "id": 102,
+        "imagem": "imagens/atividades/saude.jpg",
+        "titulo": "Feira de Saúde e Bem-Estar",
+        "data": "Outubro, 2025",
+        "descricao": "Atendimentos básicos de saúde, palestras sobre bem-estar e atividades físicas para a comunidade."
+      },
+      {
+        "id": 103,
+        "imagem": "imagens/atividades/limpeza.jpg",
+        "titulo": "Mutirão de Limpeza do Bairro",
+        "data": "Setembro, 2025",
+        "descricao": "Nossa equipe e voluntários uniram forças para limpar ruas da comunidade e revitalizar a margem do rio local."
+      }
+    ]
+  },
+
+  "cursos": {
+    "tituloHero": "Cursos Que Transformam Vidas",
+    "fraseHero": "Oferecemos educação de qualidade e abrimos portas para novas oportunidades e um futuro mais brilhante.",
+    "imagemHero": "imagens/cursos/banner.jpg",
+
+    "categorias": ["Informática", "Música", "Reforço Escolar", "Esportes"],
+
+    "lista": [
+      {
+        "id": 1,
+        "categoria": "Informática",
+        "imagemCard": "imagens/cursos/informatica.jpg",
+        "titulo": "Informática Básica - MasterICV",
+        "descricaoCurta": "O curso Informática Básica MasterICV do Instituto Casa Verde foi desenvolvido especialmente para crianças de 9 a 15 anos que desejam dar os primeiros passos no mundo digital. De forma leve e divertida, os alunos aprendem a usar o computador, criar documentos, explorar a internet com segurança e desenvolver habilidades tecnológicas essenciais. As aulas são práticas e dinâmicas, estimulando a criatividade e o raciocínio lógico. Um aprendizado que une educação, tecnologia e futuro!",
+        "linkContato": "https://api.whatsapp.com/send?phone=5511918225870&text=Quero%20saber%20mais%20sobre%20Informática%20Básica",
+
+        "detalhes": {
+          "imagemDetalhe": "imagens/cursos/curso_informatica.jpg",
+          "descricaoCompleta": "Este curso de 40 horas é fundamental para quem busca o primeiro emprego ou recolocação. Cobrimos desde a navegação segura na internet até a criação de documentos profissionais e planilhas básicas. O foco é prático e voltado para a empregabilidade.",
+          "depoimento": {
+            "titulo": "Depoimento de Aluno: Maria de Lourdes",
+            "imagem": "imagens/cursos/aluno_informatica.jpg",
+            "audioUrl": "audios/depoimento_mariaLourdes.mp3",
+            "textoDescritivo": "Antes do Master ICV, eu só sonhava em criar. Hoje, eu realmente crio o futuro. O Master ICV não é apenas um curso de programação; é onde a nova geração aprende a transformar ideias em realidade. Aqui, desenvolvemos habilidades em tecnologia e inovação que vão muito além da tela do computador. Se você é jovem e quer parar de consumir, se quer de fato dominar a tecnologia, eu garanto que o Master ICV é o melhor curso de programação do Brasil. Venha se tornar um gênio e começar a trilhar seu próprio caminho."
+          },
+          "aprendizado": [
+            "Dominar o Pacote Office (Word e Excel)",
+            "Navegação segura e uso de e-mail profissional",
+            "Criação e formatação de documentos",
+            "Organização de arquivos e pastas",
+            "Pesquisa eficaz na internet"
+          ]
+        }
+      },
+
+      {
+        "id": 2,
+        "categoria": "Música",
+        "imagemCard": "imagens/cursos/curso_teclado.png",
+        "titulo": "Teclado sem Segredos",
+        "descricaoCurta": "As oficinas de música do Instituto Casa Verde oferecem uma oportunidade única para crianças e adultos da comunidade desenvolverem seu talento musical. Com aulas práticas de teclado, violão e bateria, os participantes aprendem teoria, técnica e expressão artística em um ambiente acolhedor. As atividades estimulam a criatividade, a disciplina e o trabalho em equipe. Uma experiência transformadora que une arte, cultura e inclusão social.",
+        "linkContato": "https://api.whatsapp.com/send?phone=5511918225870&text=Tenho%20interesse%20no%20curso%20de%20Teclado",
+
+        "detalhes": {
+          "imagemDetalhe": "imagens/cursos/curso_teclado.png",
+          "descricaoCompleta": "Para iniciantes sem nenhuma experiência, este curso ensina a postura correta, leitura de cifras e os acordes mais importantes do teclado popular. As aulas são práticas e em grupo, incentivando a colaboração.",
+          
+          "depoimento": {
+            "titulo": "Depoimento de Aluno: Pedro Henrique",
+            "imagem": "imagens/cursos/aluno_teclado.png",
+            "audioUrl": "audios/depoimento_pedro.mp3",
+            "textoDescritivo": "Eu sempre quis tocar teclado, mas achava que era muito complicado. O Teclado Sem Segredos mudou tudo. As aulas são muito práticas e os professores ensinam de um jeito que a gente pega a teoria na hora. Em pouco tempo, eu já estava tocando músicas que eu adoro. A melhor parte é a confiança que eu ganhei. Se você tem vontade, pode se matricular sem medo. O curso é incrível e super recomendo."
+          },
+          
+          "aprendizado": [
+            "Entendimento de notas, ritmos, claves e leitura de partituras básicas.",
+            "Desenvolvimento da coordenação motora e uso correto dos dedos para velocidade e fluidez.",
+            "Aprender a montar e aplicar acordes essenciais para tocar diferentes estilos musicais.",
+            "Desenvolvimento da habilidade de criar suas próprias linhas melódicas e solos.",
+            "Estudo e prática de músicas populares, clássicas e contemporâneas, aplicando todo o conhecimento adquirido."
+          ]
+        }
+      },
+
+      {
+        "id": 3,
+        "categoria": "Esportes",
+        "imagemCard": "imagens/cursos/escola_futebol.jpg",
+        "titulo": "Escola de Futebol - ICV",
+        "descricaoCurta": "O Instituto Casa Verde oferece diversas modalidades esportivas para crianças e jovens da comunidade, promovendo saúde, disciplina e inclusão social. As escolas de futebol e boxe são os grandes destaques, unindo técnica, foco e superação em cada treino. Por meio do esporte, os alunos desenvolvem valores como respeito, cooperação e determinação. Um projeto que transforma vidas, formando atletas e cidadãos vencedores dentro e fora das quadras e ringues.",
+        "linkContato": "https://api.whatsapp.com/send?phone=5511918225870&text=Quero%20saber%20mais%20sobre%20a%20Escolinha%20de%20Futebol%20ICV",
+
+        "detalhes": {
+          "imagemDetalhe": "imagens/cursos/escola_futebol.jpg",
+          "descricaoCompleta": "Mais que gols, formamos vencedores! Em parceria com a comunidade, a bola rola com propósito em nossa Escola de Futebol do Instituto Casa Verde. Aqui, cada treino vai além do jogo, ensinando técnica, disciplina, trabalho em equipe e respeito. Nossos alunos aprendem a vencer desafios dentro e fora de campo, desenvolvendo corpo e mente. Invista no futuro, onde cada chute representa um passo rumo à vitória e à formação de verdadeiros campeões!",
+          "depoimento": {
+            "titulo": "Depoimento de Aluno: Luciano Santos",
+            "imagem": "imagens/cursos/aluno_futebol.png",
+            "audioUrl": "audios/depoimento_luciano.mp3",
+            "textoDescritivo": "Oi! Meu nome é Luciano. Eu participo da escolinha de futebol do Instituto Casa Verde e eu adoro treinar aqui! Aprendi muita coisa, como trabalhar em equipe, respeitar os colegas e nunca desistir. Os professores são muito legais e sempre nos ajudam a melhorar. Jogar aqui é muito mais que fazer gols — é aprender, se divertir e sonhar em ser um grande jogador um dia"
+          },
+          "aprendizado": [
+            "Técnicas básicas do futebol – controle de bola, passes, dribles e finalizações.",
+            "Trabalho em equipe – aprender a jogar de forma cooperativa e respeitosa com os colegas.",
+            "Disciplina e responsabilidade – cumprir horários, seguir regras e respeitar o treinador.",
+            "Condicionamento físico – desenvolver força, agilidade, coordenação e resistência.",
+            "Espírito esportivo – saber ganhar e perder com respeito, valorizando o fair play."
+          ]
+        }
+      }
+    ]
+  },
+
+  "doacoes": {
+    "tituloHero": "Apoie Nossa Causa",
+    "fraseHero": "Onde cada centavo plantado vira futuro e esperança para a nossa comunidade.",
+    "imagemHero": "imagens/doacoes/banner_doacoes.jpg",
+
+    "cards": [
+      {
+        "id": 1,
+        "titulo": "Doação Pontual",
+        "imagem": "imagens/doacoes/card_doacao.png",
+        "descricao": "Sua generosidade faz a diferença! Com uma doação pontual de qualquer valor, você contribui diretamente para o sucesso de nossas iniciativas. Seja a força que impulsiona a mudança, transformando realidades e construindo um futuro mais justo para todos. Faça parte dessa corrente do bem!",
+        "modalId": "modal-pontual"
+      },
+      {
+        "id": 2,
+        "titulo": "Torne-se um Associado",
+        "imagem": "imagens/doacoes/card_membro.png",
+        "descricao": "Ao se tornar um Associado, seu apoio regular e fundamental garante a continuidade e o impacto de todas as nossas iniciativas. Contribua de forma consistente e ajude-nos a construir um futuro mais promissor para centenas de vidas. Faça a diferença, mês a mês!",
+        "modalId": "modal-mensal"
+      },
+      {
+        "id": 3,
+        "titulo": "Voluntariado",
+        "imagem": "imagens/doacoes/card_voluntario.png",
+        "descricao": "Seu tempo e talento são inestimáveis para nós! No Instituto Casa Verde, cada voluntário é um agente de mudança, contribuindo diretamente para o florescimento de nossa comunidade. Entre em contato e descubra como você pode fazer a diferença, plantando esperança e colhendo sorrisos!",
+        "modalId": "modal-voluntario"
+      }
+    ],
+
+    "modais": {
+      "pontual": {
+        "chavePix": "60.190.420/0001-00",
+        "textoPix": "A sua doação pontual é vital para mantermos nossas atividades e projetos em andamento. <br> Você pode doar via **PIX (CNPJ)**: <br> <strong>Chave PIX: 60.190.420/0001-00</strong> <br> Ou utiliza o QR Code abaixo.",
+        "imagemQrCode": "imagens/doacoes/qrcode_pix.png",
+        "textoRecibo": "Após a doação, se desejar um recibo, envie o comprovante para o nosso email de contato."
+      },
+
+      "mensal": {
+        "textoIntroducao": "Ao se tornar um Associado, você garante um fluxo contínuo de apoio que nos permite planejar projetos de longo prazo e causar um impacto ainda maior.",
+        "linkAssinatura": "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=1d48bd609f2f4d858b55833f90fae0e9"
+      },
+
+      "voluntario": {
+        "textoIntroducao": "Seu tempo e talento são inestimáveis para nós! CADASTRE-SE e descubra como você pode fazer a diferença, plantando esperança e colhendo sorrisos!",
+        "linkCadastro": "https://docs.google.com/forms/d/e/1FAIpQLSf9PY750XPA-fsNMkCL0NShHFfZMv3pu_LDA9u9OZeZ0oZxhw/viewform?usp=header"
+      }
+    }
+  },
+
+  "contato": {
+    "tituloHero": "Entre em Contato",
+    "fraseHero": "Estamos ansiosos para ouvir você! Sua mensagem é o primeiro passo para construirmos juntos um futuro melhor.",
+    "imagemHero": "imagens/contato/contato.jpg",
+
+    "horarioAtendimento": {
+      "diasUteis": "08:00 às 18:00",
+      "sabados": "09:00 às 14:00"
+    },
+
+    "redesSociais": [
+      {
+        "icone": "facebook",
+        "link": "https://facebook.com/institutocasaverde"
+      },
+      { "icone": "instagram", "link": "https://instagram.com/casaverdeinstituto" },
+      { "icone": "linkedin", "link": "https://linkedin.com/" },
+      { "icone": "youtube", "link": "https://youtube.com/" }
+    ]
+  }
+}
+
